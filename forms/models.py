@@ -8,5 +8,6 @@ class created_forms(models.Model):
     content = models.TextField(blank=True, null=True)
 
 class complited_forms(models.Model):
+    form = models.ForeignKey(created_forms, on_delete=models.CASCADE, default="0")
     respondent = models.ForeignKey(User, on_delete=models.CASCADE)
     answer = models.TextField(blank=True, null=True)

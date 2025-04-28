@@ -1,0 +1,223 @@
+openapi: 3.0.3
+info:
+  title: api
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: gavyt.ooguy.com
+paths:
+  /api/users/get_all:
+    get:
+      summary: Получить все формы пользователя
+      description: Получить все формы пользователя
+      operationId: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - jwtBearerAuth: []
+  /api/forms/get/5555:
+    get:
+      summary: Получить форму по id
+      description: Получить форму по id
+      operationId: id
+      responses:
+        '200':
+          description: ''
+  /api/forms/create:
+    post:
+      summary: Создать форму
+      description: Создать форму
+      operationId: '1'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: eeeee
+                title:
+                  type: string
+                  example: ttt
+            examples:
+              Создать форму:
+                value:
+                  content: eeeee
+                  title: ttt
+      responses:
+        '200':
+          description: ''
+  /api/forms/delete/69:
+    delete:
+      summary: Удалить форму
+      description: Удалить форму
+      operationId: '2'
+      responses:
+        '200':
+          description: ''
+      security:
+        - jwtBearerAuth: []
+  /api/forms/edit/5555:
+    put:
+      summary: Изменить форму
+      description: Изменить форму
+      operationId: '3'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: also edit!
+                title:
+                  type: string
+                  example: edit!
+            examples:
+              Изменить форму:
+                value:
+                  content: also edit!
+                  title: edit!
+      responses:
+        '200':
+          description: ''
+      security:
+        - jwtBearerAuth: []
+  /api/users/create:
+    post:
+      summary: Создать пользователя
+      description: Создать пользователя
+      operationId: '4'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: no thanks
+                password:
+                  type: string
+                  example: qwerty
+                username:
+                  type: string
+                  example: tester228
+            examples:
+              Создать пользователя:
+                value:
+                  email: no thanks
+                  password: qwerty
+                  username: tester228
+      responses:
+        '200':
+          description: ''
+  /api/token:
+    post:
+      summary: get JWT token
+      description: get JWT token
+      operationId: getJwtToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: qwerty
+                username:
+                  type: string
+                  example: tester228
+            examples:
+              get JWT token:
+                value:
+                  password: qwerty
+                  username: tester228
+      responses:
+        '200':
+          description: ''
+  /api/about:
+    get:
+      summary: about api
+      description: about api
+      operationId: aboutApi
+      responses:
+        '200':
+          description: ''
+  /api/answers/create/5555:
+    post:
+      summary: Создать ответ
+      description: Создать ответ
+      operationId: '5'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                answer:
+                  type: string
+                  example: ahaha is json answer
+            examples:
+              Создать ответ:
+                value:
+                  answer: ahaha is json answer
+      responses:
+        '200':
+          description: ''
+      security:
+        - jwtBearerAuth: []
+  /api/answers/edit/5555/1:
+    put:
+      summary: Изменить ответ
+      description: Изменить ответ
+      operationId: '6'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                answer:
+                  type: string
+                  example: ahaha is json answerwewewewewewewwe
+            examples:
+              Изменить ответ:
+                value:
+                  answer: ahaha is json answerwewewewewewewwe
+      responses:
+        '200':
+          description: ''
+      security:
+        - jwtBearerAuth: []
+  /api/answers/delete/5555/2:
+    delete:
+      summary: Удалить ответ
+      description: Удалить ответ
+      operationId: '7'
+      responses:
+        '200':
+          description: ''
+      security:
+        - jwtBearerAuth: []
+  /api/answers/get/5555:
+    get:
+      summary: Получить ответы
+      description: Получить ответы
+      operationId: '8'
+      responses:
+        '200':
+          description: ''
+      security:
+        - jwtBearerAuth: []
+components:
+  securitySchemes:
+    jwtBearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: jwt
+tags: []
