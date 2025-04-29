@@ -1,6 +1,7 @@
 Запуск
 ======
 . ./venv/bin/activate<br>
+pip install -r requirements.txt<br>
 python3 manage.py runserver 0.0.0.0:8000 (или любой другой порт)<br>
 
 Postman
